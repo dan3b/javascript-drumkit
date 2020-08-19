@@ -1,9 +1,9 @@
 
 function playSound(event){
     // create an audio variable and selects the corresponding data-key audio src
-    var audio = document.querySelector(`audio[data-key="${event.keyCode}"]`)
+    let audio = document.querySelector(`audio[data-key="${event.keyCode}"]`)
     //select the .key class for corresponding data-key
-    var key = document.querySelector(`.key[data-key="${event.keyCode}"]`)
+    let key = document.querySelector(`.key[data-key="${event.keyCode}"]`)
     //if no corresponding audio for key pressed it just stops the function from running
     if(!audio) return;
     //constantly rewind back to start so buttons can be constantly repeated without having to wait for audio to finsih
@@ -21,7 +21,7 @@ function playSound(event){
       this.classList.remove('playing');
     };
     
-    var keys = document.querySelectorAll('.key');
+    let keys = document.querySelectorAll('.key');
     keys.forEach(key => key.addEventListener('transitionend',removeTransition));
   
   //when key is pressed it runs playSound function
